@@ -11,10 +11,10 @@ namespace CommonMath
     {
         public RightToLeftMatrix4x4 ()
         {
-            base[0, 0] = -1;
-            base[1, 2] =  1;
-            base[2, 1] = -1;
-            base[3, 3] =  1;
+            base [0, 0] = -1;
+            base [1, 2] =  1;
+            base [2, 1] = -1;
+            base [3, 3] =  1;
         }
     }
 }
