@@ -74,13 +74,13 @@ namespace CommonMath
                     data [j,i] = src [get++];
         }
 
-        public void FillOneColumn (int col, List<double> vals)
+        public void FillOneColumn (int col, List<double> values)
         {
-            if (Rows != vals.Count)
+            if (Rows != values.Count)
                 throw new Exception ("FillOneColumn: number matrix rows must equal length of values list");
 
             for (int i=0; i<Rows; i++)
-                data [i, col] = vals [i];
+                data [i, col] = values [i];
         }
 
         //****************************************************************************
@@ -380,35 +380,34 @@ namespace CommonMath
         // ToString ()
         //
 
-
-        private string FormatDouble (double a)
-        {
-            string str = " 0       ";
-
-            if (a > 0) str = string.Format ("{0: 0.000}", a);
-            if (a < 0) str = string.Format ("{0:0.000}", a);
-
-            return str;
-        }
-
         public override String ToString ()
         {
             string str = null;
 
-            if (Rows == 1 && Cols == 1)
+            for (int i = 0; i<Rows; i++)
             {
-                return FormatDouble (data [0, 0]);
+                for (int j = 0; j<Cols; j++)
+                    str += data [i, j].ToString () + ",  ";
+
+                str += "\n";
             }
 
+            return str;
+        }
 
+        public String ToString (string format)
+        {
+            string str = null;
 
-            for (int i=0; i<Rows; i++)
+            for (int i = 0; i<Rows; i++)
             {
-                for (int j=0; j<Cols; j++)
-                    str += FormatDouble (data [i,j]) + ",  ";  // NOT TESTED
+                for (int j = 0; j<Cols; j++)
+                {
+                    double d = data [i, j];
 
-                //for (int j=0; j<Cols; j++)
-                //    str += string.Format ("{0,8:0.0000},", data [i,j]);
+                    if (d >= 0) str += data [i, j].ToString (" " + format) + ",  ";
+                    else        str += data [i, j].ToString (format) + ",  ";
+                }
 
                 str += "\n";
             }

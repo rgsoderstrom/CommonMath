@@ -134,16 +134,5 @@ namespace CommonMath
             return results;
         }
 */
-        //****************************************************************************
-        //
-        // ToString ()
-        //
-
-        public override String ToString ()
-        {
-            return string.Format ("[{0:0.000}, {1:0.000}, {2:0.000}]\n", data[0, 0], data[0, 1], data[0, 2])
-                 + string.Format ("[{0:0.000}, {1:0.000}, {2:0.000}]\n", data[1, 0], data[1, 1], data[1, 2])
-                 + string.Format ("[{0:0.000}, {1:0.000}, {2:0.000}]\n", data[2, 0], data[2, 1], data[2, 2]);
-        }
     }
 }
