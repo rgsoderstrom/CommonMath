@@ -85,6 +85,45 @@ namespace CommonMath
 
         //****************************************************************************
         //
+        // max and min
+        //
+
+        /// <summary>
+        /// Max - return largest value in a matrix
+        /// </summary>
+        /// 
+
+        public double Max ()
+        {
+            double m = double.MinValue;
+
+            for (int i=0; i<Rows; i++)
+                for (int j=0; j<Cols; j++)
+                    if (m < data [i, j])
+                        m = data [i, j];
+
+            return m;
+        }
+
+        /// <summary>
+        /// Min - return smallest value in a matrix
+        /// </summary>
+        /// 
+
+        public double Min ()
+        {
+            double m = double.MaxValue;
+
+            for (int i=0; i<Rows; i++)
+                for (int j=0; j<Cols; j++)
+                    if (m > data [i, j])
+                        m = data [i, j];
+
+            return m;
+        }
+
+        //****************************************************************************
+        //
         // operators and indexers
         //
 
