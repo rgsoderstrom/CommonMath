@@ -97,7 +97,6 @@ namespace CommonMath
             if (m1.Rows == m2.Rows && m1.Cols == m2.Cols)
             {
                 Matrix results = new Matrix (m1.Rows, m1.Cols);
-
             
                 for (int i = 0; i < results.Rows; i++)
                 {
@@ -122,6 +121,21 @@ namespace CommonMath
                 for (int j = 0; j < results.Cols; j++)
                 {
                     results[i, j] = Math.Pow (m1.data[i, j], ex);
+                }
+            }
+
+            return results;
+        }
+
+        public static Matrix operator^ (double bs, Matrix ex)
+        {
+            Matrix results = new Matrix (ex.Rows, ex.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {
+                    results [i, j] = Math.Pow (bs, ex.data [i, j]);
                 }
             }
 
