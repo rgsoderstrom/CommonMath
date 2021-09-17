@@ -11,6 +11,7 @@ namespace CommonMath
 
         public int Rows {get {return data.GetLength (0);}}
         public int Cols {get {return data.GetLength (1);}}
+        public double [,] Data {get {return data;}}
         
         //****************************************************************************
         //
