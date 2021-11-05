@@ -87,6 +87,21 @@ namespace CommonMath
             return (1/s) * m1;
         }
 
+        public static Matrix operator/ (double s, Matrix m1)
+        {
+            Matrix results = new Matrix (m1.Rows, m1.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {
+                    results [i, j] = s / m1.data [i, j];
+                }
+            }
+
+            return results;
+        }
+
         //************************************************************************************
         //
         // Power
