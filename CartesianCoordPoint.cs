@@ -1,4 +1,11 @@
-﻿using System;
+﻿
+//
+// CartesianCoordPoint
+//      - see SphericalCoordPoint for a more versatile point
+//          - both Cartesian and Spherical representation
+//
+
+using System;
 using System.Windows.Media.Media3D;
 
 namespace CommonMath
@@ -32,10 +39,7 @@ namespace CommonMath
 
         public Point3D Cartesian
         {
-            get
-            {
-                return new Point3D (x, y, z);
-            }
+            get {return new Point3D (x, y, z);}
 
             set
             {
@@ -47,41 +51,20 @@ namespace CommonMath
 
         public double X
         {
-            get 
-            {
-               return x;
-            }
-
-            set
-            {
-                x = value;
-            }
+            get {return x;}
+            set {x = value;}
         }
 
         public double Y
         {
-            get 
-            {
-               return y;
-            }
-
-            set
-            {
-                y = value;
-            }
+            get {return y;}
+            set {y = value;}
         }
-        
+
         public double Z
         {
-            get 
-            {
-               return z;
-            }
-
-            set
-            {
-                z = value;
-            }
+            get {return z;}
+            set {z = value;}
         }
 
         public override string ToString ()
