@@ -57,6 +57,9 @@
     <Compile Include="MatrixArith.cs" />
     <Compile Include="MatrixInverse.cs" />
     <Compile Include="NewtonRaphson.cs" />
+    <Compile Include="PointSph.cs" />
+    <Compile Include="PointCyl.cs" />
+    <Compile Include="PointXYZ.cs" />
     <Compile Include="Vector.cs" />
     <Compile Include="CylindricalCoordPoint.cs" />
     <Compile Include="ICartesian.cs" />
