@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Media3D;
@@ -77,7 +78,9 @@ namespace CommonMath
             z        = _z;
         }
 
-        // from Windows Point3D
+        /// <summary>
+        /// from Windows Point3D
+        /// </summary>
         public PointCyl (Point3D src)
         {
             Update (src.X, src.Y, src.Z);
@@ -101,6 +104,17 @@ namespace CommonMath
             z        = _z;  
         }
 
+        //**************************************************************************************
+
+        public static Vector3D operator- (PointCyl p2, PointCyl p1)
+        {
+            return p2.Point3D - p1.Point3D;
+        }
+        
+       
+
+
+        //**************************************************************************************
         //
         // ToString
         //
