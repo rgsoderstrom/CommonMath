@@ -108,6 +108,17 @@ namespace CommonMath
             phiRad   = Math.Atan2 (Math.Sqrt (x*x + y*y), z);  
         }
 
+        //**************************************************************************************
+
+        public static Vector3D operator- (PointSph p2, PointSph p1)
+        {
+            return p2.Point3D - p1.Point3D;
+        }
+        
+       
+
+
+        //**************************************************************************************
         //
         // ToString
         //

@@ -43,6 +43,16 @@ namespace CommonMath
         }
 
         /// <summary>
+        /// from Windows Vector3D
+        /// </summary>
+        public PointXYZ (Vector3D src)
+        {
+            X = src.X;
+            Y = src.Y;
+            Z = src.Z;
+        }
+
+        /// <summary>
         /// from CommonMath PointXYZ, PointSph or PointCyl
         /// </summary>       
         public PointXYZ (ICartesian pt)
@@ -52,6 +62,19 @@ namespace CommonMath
             Z = pt.Z;
         }
 
+        //**************************************************************************************
+
+        public static Vector3D operator- (PointXYZ p2, PointXYZ p1)
+        {
+            return p2.Point3D - p1.Point3D;
+        }
+        
+        public static PointXYZ operator+ (PointXYZ pt, Vector3D v)
+        {
+            return new PointXYZ (pt.X + v.X, pt.Y + v.Y, pt.Z + v.Z);
+        }
+              
+        //**************************************************************************************
         //
         // ToString
         //
