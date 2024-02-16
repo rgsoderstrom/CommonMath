@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="CartesianCoordPoint.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="Complex.cs" />
+    <Compile Include="ComplexMatrix.cs" />
     <Compile Include="Interpolation.cs" />
     <Compile Include="MatrixArith.cs" />
     <Compile Include="MatrixInverse.cs" />
