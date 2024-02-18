@@ -171,6 +171,70 @@ namespace CommonMath
 
                 return results;
             //}
+        } 
+
+        //************************************************************************************
+        //
+        // Division
+        //
+        public static CMatrix operator/ (double d1, CMatrix m2)
+        {
+            CMatrix results = new CMatrix (m2.Rows, m2.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {                       
+                    results [i, j] = d1 / m2.data [i, j];                 
+                }
+            }
+
+            return results;
+        }
+
+        public static CMatrix operator/ (CMatrix m1, double d2)
+        {
+            CMatrix results = new CMatrix (m1.Rows, m1.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {                       
+                    results [i, j] = m1.data [i, j] / d2;                 
+                }
+            }
+
+            return results;
+        }
+
+        public static CMatrix operator/ (CMatrix m1, Complex d2)
+        {
+            CMatrix results = new CMatrix (m1.Rows, m1.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {                       
+                    results [i, j] = m1.data [i, j] / d2;                 
+                }
+            }
+
+            return results;
+        }
+
+        public static CMatrix operator/ (Complex d1, CMatrix m2)
+        {
+            CMatrix results = new CMatrix (m2.Rows, m2.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {                       
+                    results [i, j] = d1 / m2.data [i, j];                 
+                }
+            }
+
+            return results;
         }
 
         //****************************************************************************
