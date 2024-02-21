@@ -58,6 +58,12 @@ namespace CommonMath
             return new Complex (mag * Math.Cos (ang), mag * Math.Sin (ang));
         }
 
+        public static Complex operator^ (Complex op1, double op2) 
+        {
+            double mag = Math.Pow (op1.Magnitude, op2); double ang = op1.Angle * op2; 
+            return new Complex (mag * Math.Cos (ang), mag * Math.Sin (ang));
+        }
+
         public static Complex operator+ (Complex op1, double  op2) {return new Complex (op1.Real + op2, op1.Imag);}
         public static Complex operator+ (double  op1, Complex op2) {return new Complex (op2.Real + op1, op2.Imag);}
 
