@@ -201,6 +201,37 @@ namespace CommonMath
             return results;
         }
 
+        //*************************************************************
+
+        // (real matrix) + (complex scalar)
+
+        public static CMatrix operator+ (Matrix m2, Complex s1)
+        {
+            return s1 + m2;
+        }
+
+        public static CMatrix operator+ (Complex s1, Matrix m2)
+        {
+            CMatrix results = new CMatrix (m2.Rows, m2.Cols);
+
+            for (int i = 0; i < results.Rows; i++)
+            {
+                for (int j = 0; j < results.Cols; j++)
+                {
+                    results[i, j] = s1;
+                    results[i, j].Real += m2 [i,j];
+                }
+            }
+
+            return results;
+        }
+
+
+
+
+
+
+
         //*************************************************************************************
         //
         // Subtraction 
