@@ -28,6 +28,15 @@ namespace CommonMath
                     data [i, j] = new Complex (0, 0);
         }
 
+        public CMatrix (Matrix src)
+        {
+            data = new Complex [src.Rows, src.Cols];
+
+            for (int i=0; i<Rows; i++)
+                for (int j=0; j<Cols; j++)
+                    data [i, j] = new Complex (src [i, j], 0);
+        }
+
         public bool IsScalar       {get {return Rows == 1 && Cols == 1;}}
         public bool IsRowVector    {get {return Rows == 1 && Cols >  1;}}
         public bool IsColumnVector {get {return Rows >  1 && Cols == 1;}}
@@ -265,6 +274,18 @@ namespace CommonMath
         }
 
         //****************************************************************************
+
+        public void FillByRow (Complex [] src)
+        {
+            if (Rows * Cols != src.GetLength (0))
+                throw new Exception ("Size error in FillByRow");
+
+            int get = 0;
+
+            for (int i=0; i<Rows; i++)
+                for (int j=0; j<Cols; j++)
+                    data [i,j] = src [get++];
+        }
 
         public void FillByColumn (Complex [] src)
         {
