@@ -18,6 +18,12 @@ namespace CommonMath
             imag = im;
         }
 
+        public Complex (double re)
+        {
+            real= re;
+            imag = 0;
+        }
+
         public Complex (string str)
         {
             string [] tokens = str.Split (new char [] {' ', '+', 'i'}, StringSplitOptions.RemoveEmptyEntries);
